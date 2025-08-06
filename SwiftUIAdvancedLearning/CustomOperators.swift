@@ -9,7 +9,21 @@ import SwiftUI
 
 struct CustomOperators: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let result = 15 -/ 5
+        Text("\(result.formatted())")
+    }
+}
+
+infix operator +/
+infix operator -/
+
+extension FloatingPoint {
+    static func +/ (lhs: Self, rhs: Self) -> Self {
+        (lhs + rhs) / 2
+    }
+    
+    static func -/ (lhs: Self, rhs: Self) -> Self {
+        (lhs - rhs) / 2
     }
 }
 
